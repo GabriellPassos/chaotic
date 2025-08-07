@@ -4,12 +4,13 @@ import { useEffect, useState } from "react";
 import { BrowserRouter } from "react-router-dom";
 import { TemplatePage } from "./pages/TemplatePage";
 import { Equipment } from "./pages/Equipment";
+import { Content } from "./pages/Content.jsx";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename="/chaotic">
         <TemplatePage>
-          <Equipment/>
+          <Content />
         </TemplatePage>
       </BrowserRouter>
     </div>

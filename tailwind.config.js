@@ -13,6 +13,14 @@ module.exports = {
         "neutral-secondary-200": "var(--color-neutral-secondary-200)",
       },
     },
+    screens: {
+      xs: "360px", // novo breakpoint menor que sm
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
   },
   plugins: [],
 };

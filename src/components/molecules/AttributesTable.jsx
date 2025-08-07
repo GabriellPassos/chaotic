@@ -1,10 +1,18 @@
 import React, { useState } from "react";
 import { ButtonRoundedSimple } from "../atoms/ButtonRoundedSimple";
-import { Plus,Subtraction } from "../../assets/svgs/icons";
+import { Plus, Subtraction } from "../../assets/svgs/icons";
 
-export const AtributesTables = ({attributes, setAttributes}) => {
-
-
+export const AtributesTables = ({
+  classNameWrapper,
+  attributes = {
+    vitality: 0,
+    mana: 0,
+    strength: 0,
+    dexterity: 0,
+    intelligence: 0,
+  },
+  setAttributes,
+}) => {
   function increaseAttribute(e) {
     e.preventDefault();
     const name = e.currentTarget.name;
@@ -25,8 +33,8 @@ export const AtributesTables = ({attributes, setAttributes}) => {
   }
 
   return (
-    <div>
-      <p  className="text-left text-xl p-2 pb-4">Atributos</p>
+    <div className={`${classNameWrapper}`}>
+      <p className="text-left text-xl p-2 pb-4">Atributos</p>
       <form className="px-4 text-left ">
         {Object.entries(attributes).map(([key, value]) => (
           <div key={key} className="mb-4 flex justify-between">
@@ -38,7 +46,7 @@ export const AtributesTables = ({attributes, setAttributes}) => {
                 className="p-[8px]"
                 name={key}
                 onClick={decreaseAttribute}
-                text={<Subtraction/>}
+                text={<Subtraction />}
                 type="button"
               />
               <input
@@ -47,13 +55,12 @@ export const AtributesTables = ({attributes, setAttributes}) => {
                 value={value}
                 readOnly
                 className="w-[40px] text-center border-none focus:outline-none bg-transparent cursor-default select-none"
-
               />
               <ButtonRoundedSimple
                 className="p-[8px]"
                 name={key}
                 onClick={increaseAttribute}
-                text={<Plus/>}
+                text={<Plus />}
                 type="button"
               />
             </div>
